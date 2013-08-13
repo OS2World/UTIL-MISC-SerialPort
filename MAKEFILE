@@ -1,0 +1,46 @@
+
+
+
+CCFLAGS=-Zmt  -g
+CC=g++
+
+
+default: all
+
+INCLUDES= \
+	-I. 
+
+SOURCES= \
+	SerialPort.o \
+	upsstatMain.o
+
+oldTest: os2-devconfig.exe
+
+all: EXEC
+EXEC: upsstat.exe
+
+clean:
+	-del *.exe
+	-del *.dll
+	-del *.lib
+	-del *.o
+
+
+upsstat.exe: $(SOURCES)
+	$(CC) $(CCFLAGS) $(SOURCES) -o upsstat.exe
+
+os2-devconfig.exe: os2-devconfig.cc
+	$(CC) $(CCFLAGS) $(INCLUDES) os2-devconfig.cc -o os2-devconfig.exe
+
+
+# seriallib.dll: SerialPort.obj
+#	$(CC) $(CCFLAGS) $(INCLUDES) -Zdll -Zso -Zsys -Zomf \
+# SerialPort.obj -o seriallib.dll
+
+
+
+SerialPort.o: SerialPort.h SerialPort.cc
+	$(CC) $(CCFLAGS) $(INCLUDES) -c SerialPort.cc 
+
+upsstatMain.o: upsstatMain.cc 
+	$(CC) $(CCFLAGS) $(INCLUDES) -c upsstatMain.cc 

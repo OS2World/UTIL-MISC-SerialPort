@@ -1,0 +1,13 @@
+License Agreement
+
+Andrew Lundgren grants Licensee a non-exclusive, non-transferable, royalty-free license to use SerialPort and the other included code without fee.
+
+This material is provided "as is", with absolutely no warranty expressed or implied. Any use is at your own risk.
+Permission to use or copy this software for any purpose is hereby granted without fee. Permission to modify the code and to distribute modified code is granted.
+
+The Licensee may distribute binaries compiled with this code (whether original or modified) without any royalties or restrictions.
+
+The Licensee may distribute original or modified sources, provided that:
+
+    * The conditions indicated in the above permission notice are met;
+
